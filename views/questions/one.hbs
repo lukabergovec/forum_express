@@ -1,0 +1,47 @@
+<div>
+    <h1>{{question.title}}</h1>
+    <p>{{question.text}}</p>
+    <b>By: {{question.author_id.username}}</b>
+    <p>{{question.date}}</p>
+    {{#if question.owner}}
+        <a href="/questions/delete/{{question._id}}"><p>Delete question</p></a>
+    {{/if}}
+
+    {{#if uid}}
+        <form method="post" action="/answers">
+            <label for="text">Answer: </label>
+            <textarea name="text" rows="4" cols="45"></textarea>
+            <button class="btn btn-primary" type="submit">Answer</button>
+            <input name="questionId" value="{{question._id}}" type="hidden">
+            <input name="userId" value="{{uid}}" type="hidden">
+        </form>
+    {{/if}}
+
+    {{#if correct}}
+        <p>{{correct.text}}</p>
+        <p>By: {{correct.author_id.password}}</p>
+    {{/if}}
+
+    <div>
+        <ol>
+            {{#each answers}}
+                <div class="border rounded m-2 w-75 p-2">
+                    <p>{{this.text}}</p>
+                    <p>By: {{this.author_id.username}}</p>
+                    <div style="display: flex;">
+                        {{#unless correct}}
+                            <a style="padding: 2px;" href="/questions/answer/{{this.questionId}}/{{this._id}}"><p>
+                                Accept</p></a>
+                        {{/unless}}
+                        {{#if this.owner}}
+                            <a style="padding: 2px;" href="/answers/delete/{{this._id}}/{{this.questionId}}"><p>
+                                Delete</p></a>
+                        {{/if}}
+                    </div>
+                </div>
+            {{/each}}
+        </ol>
+    </div>
+
+
+</div>

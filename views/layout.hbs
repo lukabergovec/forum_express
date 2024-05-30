@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<ul class="navigation">
+    <li><a href="/">Home</a></li>
+    {{#if uid}}
+        <li><a href="/questions">My questions</a></li>
+        <li><a href="/addQuestion">Add question</a></li>
+        <li><a href="/users/logout">Logout</a></li>
+    {{else}}
+        <li><a href="/login">Login</a></li>
+        <li><a href="/register">Register</a></li>
+    {{/if}}
+
+</ul>
+
+{{{body}}}
+</body>
+</html>

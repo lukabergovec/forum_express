@@ -1,0 +1,19 @@
+<div>
+    {{#each questions}}
+        <div class="border rounded m-2 w-75 p-2">
+            <h1>
+                <a href="questions/{{this._id}}">
+                    {{this.title}}
+                </a>
+            </h1>
+            <p>{{this.text}}</p>
+            <b>By: {{this.author_id.username}}</b>
+            <p class="tag">Tags:
+                {{#each this.tags}}
+                    {{this}},
+                {{/each}}
+            </p>
+        </div>
+    {{/each}}
+</div>
+

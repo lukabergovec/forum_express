@@ -1,0 +1,14 @@
+<div class="padded">
+    <form method="post" action="/questions">
+        <label for="title">Title:</label>
+        <input type="text" name="title" placeholder="Title">
+        <br>
+        <label for="text">Question:</label>
+        <textarea name="text" rows="4" cols="45"></textarea>
+        <br>
+        <input type="text" name="tags" placeholder='Separate tags with ","'>
+        <br>
+        <button class="m-2 btn btn-primary" type="submit">Submit</button>
+        <input name="userId" value="{{uid}}" type="hidden">
+    </form>
+</div>

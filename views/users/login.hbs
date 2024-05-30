@@ -1,0 +1,24 @@
+
+
+<div class="centered">
+    <h1>Login</h1>
+    <form method="post" action="/users/login">
+    <div>
+        <label>Username: </label>
+    <input type="text" name="username" placeholder="Username">
+    </div>
+    
+    <div>
+        <label>Password: </label>
+        <input type="password" name="password" placeholder="Pass">
+    </div>
+
+    <button type="submit">Login</button>
+    {{#if err}}
+      <p class="red">{{err}}</p>
+    {{/if}}
+    
+    
+</form>
+</div>
+
